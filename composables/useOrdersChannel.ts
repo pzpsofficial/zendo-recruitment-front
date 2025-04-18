@@ -14,7 +14,8 @@ export function useOrdersChannel<T>(
       return;
     }
 
-    channel.value.unbind();
+    channel.value.unbind_all();
+    $pusher.unsubscribe('orders');
   }
 
   function bindEvents() {

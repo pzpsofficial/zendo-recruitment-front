@@ -16,6 +16,7 @@ export const useOrdersStore = defineStore('orders', () => {
     {
       lazy: true,
       immediate: false,
+      watch: false,
     }
   );
 
