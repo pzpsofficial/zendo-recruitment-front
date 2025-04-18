@@ -46,7 +46,7 @@ export const useOrdersStore = defineStore('orders', () => {
         'The order is being updated as a background job.'
       );
 
-      await $api('/orders/simulate-update', {
+      await $api('/api/orders/simulate-update', {
         method: 'POST',
       });
     } catch {
