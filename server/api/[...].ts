@@ -1,12 +1,14 @@
 import { joinURL } from 'ufo';
 
-export default defineEventHandler((event) => {
+export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig();
 
   const path = event.path.replace(/^\/api\//, '');
   const targetUrl = joinURL(config.apiUrl, path);
 
-  event.headers.set('Authorization', `Bearer ${config.apiSecret}`);
+  Object.assign(event.node.req.headers, {
+    Authorization: `Bearer ${config.apiSecret}`,
+  });
 
   return proxyRequest(event, targetUrl);
 });
