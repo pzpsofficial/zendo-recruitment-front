@@ -12,7 +12,7 @@ export const useOrdersStore = defineStore('orders', () => {
   const meta = ref<ListResourceMeta>();
 
   const { execute, data, error } = useAPI<ListResourceResponse<ApiOrder>>(
-    () => `/orders?page=${page.value}&search=${search.value}`,
+    () => `/api/orders?page=${page.value}&search=${search.value}`,
     {
       lazy: true,
       immediate: false,

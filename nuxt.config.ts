@@ -5,9 +5,9 @@ export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@pinia/nuxt', '@nuxtjs/tailwindcss', '@vueuse/nuxt'],
   css: ['~/assets/style/main.css'],
   runtimeConfig: {
+    apiUrl: '',
+    apiSecret: '',
     public: {
-      apiUrl: '',
-      apiSecret: '',
       pusherAppCluster: '',
       pusherAppKey: '',
     },
